@@ -67,8 +67,8 @@
 /*
  *  rxbuf[0]:
  *      b7-b4: typ wiadomo?ci:
- *          0000 - ustaw pozycje bezwzgledna (0-3600, czyli w stopniach /10 czyli z dokladnoscia do 1/10 stopnia) (pozycja,kierunek i szybkosc)
- *          0001 - ustaw pozycje bezwzgledna automatyczny kierunek (0-3600, czyli w stopniach /10 czyli z dokladnoscia do 1/10 stopnia) (pozycja i szybkosc)
+ *          0000 - set the absolute position (0-3600, i.e. in degrees/10, i.e. with the accuracy to 1/10 of a degree) (position, direction and speed)
+ *          0001 - set the absolute position with automatic direction (0-3600, i.e. in degrees/10, i.e. with the accuracy to 1/10 of a degree) (position and speed)
  *          0010 - ustaw pozycje wzgledna (-3600 do 3600, dokladnosc 1/10 stopnia) (pozycja,kierunek i szybkosc)
  *          0011 - ruch ciagly (szybkosc,kierunek)
  *          0100 - ustaw moc silnika w ruchu (0-100)
