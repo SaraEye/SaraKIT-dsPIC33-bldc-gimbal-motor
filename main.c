@@ -402,39 +402,41 @@ void parseMotorTimerPeriod() {
 //        motorSpeedA = maxMotorParameterVal;
 //        motorSpeedB = maxMotorParameterVal;
 //    } else {
-//        TMR1_Period16BitSet(defaultTimerPeriod);
+        TMR1_Period16BitSet(defaultTimerPeriod);
 //    }   
 }
 
 void parseMotorMoveTorque() {
+    float tmpTrq=0;
     if (rxbuf[0] & 0b00000001) { //todo silniki nie tylko 2 ale 8 max
         //sterowanie silnikiem B
-        float ztorqueB = (float) (rxbuf[1]);
-        if(ztorqueB>100)
-            ztorqueB=100;
-        torqueB=ztorqueB/10;
+        tmpTrq = (float) (rxbuf[1]);
+        if(tmpTrq>100)
+            tmpTrq=100;
+        torqueB=tmpTrq/10;
     } else {
-        float ztorqueA = (float) (rxbuf[1]);
-        if(ztorqueA>100)
-            ztorqueA=100;
-        torqueA=ztorqueA/10;
+        tmpTrq = (float) (rxbuf[1]);
+        if(tmpTrq>100)
+            tmpTrq=100;
+        torqueA=tmpTrq/10;
     }
 }
 
 void parseMotorIdleTorque() {
+    float tmpTrq=0;
     if (rxbuf[0] & 0b00000001) { //todo silniki nie tylko 2 ale 8 max
         //sterowanie silnikiem B  
-        float zidleTorqueB = (float) (rxbuf[1]);
-        if(zidleTorqueB>100)
-            zidleTorqueB=100;
-        idleTorqueB=zidleTorqueB/10;
+        tmpTrq = (float) (rxbuf[1]);
+        if(tmpTrq>100)
+            tmpTrq=100;
+        idleTorqueB=tmpTrq/10;
         keepTorqueTimeB = (((uint16_t) (rxbuf[2]) << 8) | rxbuf[3]);
     } else {
         //sterowanie silnikiem A
-        float zidleTorqueA = (float) (rxbuf[1]);
-        if(zidleTorqueA>100)
-            zidleTorqueA=100;
-        idleTorqueA=zidleTorqueA/10;
+        tmpTrq = (float) (rxbuf[1]);
+        if(tmpTrq>100)
+            tmpTrq=100;
+        idleTorqueA=tmpTrq/10;
         keepTorqueTimeA = (((uint16_t) (rxbuf[2]) << 8) | rxbuf[3]);
     }   
 }
