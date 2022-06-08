@@ -196,11 +196,11 @@ float diffAngle(float anglecur, float angledest, uint8_t dir) {
 
 float checkAngle(float angle) {    
     if (angle>=360) {
-        float a=angle/360;
+        int16_t a=angle/360;
         angle=(angle-a*360);
     }
     if (angle<0) {
-        float a=(-angle+360)/360;
+        int16_t a=(-angle+360)/360;
         angle=(angle+a*360);
     }
     return angle;
@@ -278,8 +278,12 @@ void timer_interrupt(void){
                     step=spd;
             }else{
                 spd=SpeedA;
-                if(diffA>spd)
+                if(abs(diffA)>spd){
                     step=spd;
+                }
+                else{
+                    step=diffA;
+                }
             } 
             lastSpeedA=spd;
                 
@@ -345,8 +349,12 @@ void timer_interrupt(void){
                     step=spd;
             }else{
                 spd=SpeedB;
-                if(diffB>spd)
+                if(abs(diffB)>spd){
                     step=spd;
+                }
+                else{
+                    step=diffB;
+                }
             } 
             lastSpeedB=spd;
                 
