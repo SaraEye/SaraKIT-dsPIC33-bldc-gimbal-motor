@@ -158,6 +158,8 @@ volatile uint16_t keepTorqueTimeA = 300, keepTorqueTimeB = 300;
 volatile uint8_t MoveContinuousA=0, MoveContinuousB=0;//ruch ci?g?y =1
 volatile float dirA=1, dirB=1;//kierunek ruchu
 volatile uint16_t defaultTimerPeriod = 0x0C34; //0x30D2 2ms, 0x1869 1ms, 0x0C34 0.5ms, 0x61a 0.25ms, 0x2a 0.01ms, 0xcd 0.034ms
+volatile float motor_tableA[258][3]; //360/7=51.42857*5= minimum 7 pair pols - dok?adno?? co 0.2 stopnia
+volatile float motor_tableB[258][3]; //360/7 minimum 7 pair pols
 
 static void Reset(void){
     asm ("reset");
@@ -233,6 +235,30 @@ void computeVoltageVector(float rotorPosition, float vectorAmplitude, float* vol
 	voltageVector[2] = Vc/2 + 31246;
 }
 
+void computeVoltageVector2(float rotorPosition, float* voltageVector, float polePairs)
+{
+    //thx for https://github.com/ViktorAnchutin/motorControl
+    static float initialRotorPosition=0;
+    /// Compute d-q axis position
+    /// compute the electric angle of the rotor with respect to the initial position. Initial position theoretically represents q axis alignment with an A stator axis.
+    float theta_elec_degrees = ((rotorPosition - initialRotorPosition)*polePairs + 90 ); // 11 - pole pairs (22P). + 90 because at initial position theta = 90
+	float theta = theta_elec_degrees*3.14159265358979323846/180;//Pi/180; // translating into radians
+
+    /// Compute phase voltages
+    /// compute a projection of the voltage vector in the q axis onto the stator's axis
+    float Va_1 = cosf(theta);//cos(theta);
+	float Vb_1 = cosf(theta - 2.0943951023931954923084289221863);//cos(theta - 2*Pi/3);
+	float Vc_1 = cosf(theta + 2.0943951023931954923084289221863);//cos(theta + 2*Pi/3);
+
+	/// Compute invertor voltages
+	/// Obtaining value for invertor, +50 because Vinv relates with V_phase as Vinv = Vphase + Vdc/2 in order to avoid negative values for invertor voltage. Vinv value should be 0-100%
+	/// should also be taken into account that Vphase(max) = Vdc/2 (using sinusoidal commutation)
+	voltageVector[0] = Va_1;
+	voltageVector[1] = Vb_1;
+	voltageVector[2] = Vc_1;
+}
+
+
 /*
     Funkcja wywolywana co 0.5 ms.
     Czestotliwosc mozna dostosowac przez lub przez CodeConfigurator timera lub recznie w pliku tmr1.c
@@ -297,12 +323,12 @@ void timer_interrupt(void){
         }
     }
     float vectorAmplitudeA = 6200*curTorqueA;
-    float voltageVectorA[3] = {0};
+/*    float voltageVectorA[3] = {0};
     computeVoltageVector(electricalPositionA, vectorAmplitudeA, voltageVectorA, PolePairsA); /// compute the voltage vector based on the rotor's position   
     PWM_DutyCycleSet(PWM_GENERATOR_6, ((int16_t) voltageVectorA[0]));
     PWM_DutyCycleSet(PWM_GENERATOR_5, ((int16_t) voltageVectorA[1]));
     PWM_DutyCycleSet(PWM_GENERATOR_3, ((int16_t) voltageVectorA[2]));    
-   
+*/   
     /*
     Zadanie sygnalow do modulu PWM
     Modul jest skonfigurowanie do przyjmowania wartosci z zakresu 0-62492
@@ -310,11 +336,23 @@ void timer_interrupt(void){
     Zwi?kszenie rozdzielczosci zmniejsza czestotliwosc pracy i na odwrot.
     Zmian mozna dokonac recznie w pwm.c lub przez CodeConfigurator
     */  
-/*
-    PWM_DutyCycleSet(PWM_GENERATOR_6, ((int16_t) (motor_table[electricalPositionA][0] * torqueA)) + 31246);
-    PWM_DutyCycleSet(PWM_GENERATOR_5, ((int16_t) (motor_table[electricalPositionA][1] * torqueA)) + 31246);
-    PWM_DutyCycleSet(PWM_GENERATOR_3, ((int16_t) (motor_table[electricalPositionA][2] * torqueA)) + 31246);
-*/
+    
+    float ang1=(360/PolePairsA);
+    float ang1b=electricalPositionA/ang1;
+    int16_t ang2=(int16_t)ang1b;
+    float ang3=(electricalPositionA-(ang2*ang1))*5;
+    int16_t ang4=(int16_t)ang3;
+    float v1=((motor_tableA[ang4][0] * vectorAmplitudeA)/2)+31246;
+    float v2=((motor_tableA[ang4][1] * vectorAmplitudeA)/2)+31246;
+    float v3=((motor_tableA[ang4][2] * vectorAmplitudeA)/2)+31246;
+    int16_t vv1=(int16_t)v1;
+    int16_t vv2=(int16_t)v2;
+    int16_t vv3=(int16_t)v3;
+
+    PWM_DutyCycleSet(PWM_GENERATOR_6, vv1);
+    PWM_DutyCycleSet(PWM_GENERATOR_5, vv2);
+    PWM_DutyCycleSet(PWM_GENERATOR_3, vv3);
+
 //==============Driver B (Pionowy)
     if(MoveContinuousB){
         currentPositionB=checkAngle(currentPositionB+SpeedB*dirB);
@@ -368,11 +406,30 @@ void timer_interrupt(void){
         }
     }
     float vectorAmplitudeB = 6200*curTorqueB;
+/*
     float voltageVectorB[3] = {0};
     computeVoltageVector(electricalPositionB, vectorAmplitudeB, voltageVectorB, PolePairsB); /// compute the voltage vector based on the rotor's position
     PWM_DutyCycleSet(PWM_GENERATOR_2, ((int16_t) voltageVectorB[0]));
     PWM_DutyCycleSet(PWM_GENERATOR_1, ((int16_t) voltageVectorB[1]));
     PWM_DutyCycleSet(PWM_GENERATOR_4, ((int16_t) voltageVectorB[2]));    
+ */
+    
+    ang1=(360/PolePairsB);
+    ang1b=electricalPositionB/ang1;
+    ang2=(int16_t)ang1b;
+    ang3=(electricalPositionB-(ang2*ang1))*5;
+    ang4=(int16_t)ang3;
+    v1=((motor_tableB[ang4][0] * vectorAmplitudeB)/2)+31246;
+    v2=((motor_tableB[ang4][1] * vectorAmplitudeB)/2)+31246;
+    v3=((motor_tableB[ang4][2] * vectorAmplitudeB)/2)+31246;
+    vv1=(int16_t)v1;
+    vv2=(int16_t)v2;
+    vv3=(int16_t)v3;
+
+    PWM_DutyCycleSet(PWM_GENERATOR_2, vv1);
+    PWM_DutyCycleSet(PWM_GENERATOR_1, vv2);
+    PWM_DutyCycleSet(PWM_GENERATOR_4, vv3);
+    
 }
 
 /*
@@ -543,9 +600,11 @@ void parseMotorStop() {
     if (rxbuf[0] & 0b00000001) { //todo silniki nie tylko 2 ale 8 max
         //sterowanie silnikiem B
         MoveContinuousB=0;
+        StartB=0;
         targetPositionB = currentPositionB;
     } else {
         MoveContinuousA=0;
+        StartA=0;
         targetPositionA = currentPositionA;
     }
 }
@@ -594,12 +653,38 @@ void parseMotorGetInfo() {
     }
 }
 
+void CreateMotorTable(int MotorId){
+    if (MotorId==0){
+        float voltageVector[3] = {0};
+        uint16_t a02=0;
+        for(float a=0; a<360/PolePairsA; a=a+0.2){
+            computeVoltageVector2(a, voltageVector, PolePairsA);
+            motor_tableA[a02][0]=voltageVector[0];
+            motor_tableA[a02][1]=voltageVector[1];
+            motor_tableA[a02][2]=voltageVector[2];
+            a02++;
+        }            
+    } else {
+        float voltageVector[3] = {0};
+        uint16_t a02=0;
+        for(float a=0; a<360/PolePairsB; a=a+0.2){
+            computeVoltageVector2(a, voltageVector, PolePairsB);
+            motor_tableB[a02][0]=voltageVector[0];
+            motor_tableB[a02][1]=voltageVector[1];
+            motor_tableB[a02][2]=voltageVector[2];
+            a02++;
+        }                    
+    }
+}
+
 void parseMotorPolePairs() {
     if (rxbuf[0] & 0b00000001) { //todo silniki nie tylko 2 ale 8 max
         //sterowanie silnikiem B
         PolePairsB = (float) (rxbuf[1]);
+        CreateMotorTable(1);
     } else {
         PolePairsA = (float) (rxbuf[1]);
+        CreateMotorTable(0);
     }
 }
 
