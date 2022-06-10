@@ -543,9 +543,11 @@ void parseMotorStop() {
     if (rxbuf[0] & 0b00000001) { //todo silniki nie tylko 2 ale 8 max
         //sterowanie silnikiem B
         MoveContinuousB=0;
+        StartB=0;
         targetPositionB = currentPositionB;
     } else {
         MoveContinuousA=0;
+        StartA=0;
         targetPositionA = currentPositionA;
     }
 }

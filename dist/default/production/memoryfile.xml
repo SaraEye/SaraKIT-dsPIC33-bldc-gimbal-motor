@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/SARACAM_MotorTest.X.production.elf">
+  <executable name="dist/default/production/SaraKIT-dsPIC33-bldg-gimbal-motor.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>8192</length>
@@ -11,8 +11,8 @@
     <memory name="program">
       <units>bytes</units>
       <length>35712</length>
-      <used>34233</used>
-      <free>1479</free>
+      <used>34311</used>
+      <free>1401</free>
     </memory>
   </executable>
 </project>
