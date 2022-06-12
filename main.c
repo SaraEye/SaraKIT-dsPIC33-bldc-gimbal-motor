@@ -208,17 +208,17 @@ float checkAngle(float angle) {
 float computeVoltageVector(float rotorPosition)
 {
     float theta_elec_degrees = ((rotorPosition) + 90 ); // 11 - pole pairs (22P). + 90 because at initial position theta = 90
-	float theta = theta_elec_degrees*3.14159265358979323846/180;//Pi/180; // translating into radians
+    float theta = theta_elec_degrees*PI/180;//Pi/180; // translating into radians
     return cosf(theta);//cos(theta);
 }
 
 int16_t GetPWM_DutyCycle(float electricalPosition, float vectorAmplitude, int16_t PolePairs, int16_t f)
 {        
     float ang1=(360/PolePairs);
-    float ang1b=electricalPosition/ang1;
-    int16_t ang2;
-    ang2=(int16_t)ang1b;
-    float ang3=(((electricalPosition-(ang2*ang1))*360)/ang1);
+    float ang2=electricalPosition;
+    while (ang2>=ang1)
+        ang2=ang2-ang1;
+    float ang3=(ang2*360)/ang1;
 
     float v;
     if (f==0)
