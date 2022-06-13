@@ -224,9 +224,9 @@ int16_t GetPWM_DutyCycle(float electricalPosition, float vectorAmplitude, int16_
     if (f==0)
         v=((motor_table[(int16_t)(ang3*5)] * vectorAmplitude)/2)+31246;
     else if (f==1)
-        v=((motor_table[(int16_t)(checkAngle(ang3+120)*5)] * vectorAmplitude)/2)+31246;
-    else
         v=((motor_table[(int16_t)(checkAngle(ang3-120)*5)] * vectorAmplitude)/2)+31246;
+    else
+        v=((motor_table[(int16_t)(checkAngle(ang3+120)*5)] * vectorAmplitude)/2)+31246;
 
     return (int16_t)v;
 }
