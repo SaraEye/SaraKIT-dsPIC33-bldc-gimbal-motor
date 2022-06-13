@@ -343,11 +343,11 @@ section                    address      alignment gaps    total length  (dec)
 .nbss                       0x1078                   0            0x24  (36)
 .ndata                      0x109c                   0             0x2  (2)
 .nbss                       0x109e                   0             0x8  (8)
-.bss                        0x10a6                   0          0x1c3c  (7228)
-.data                       0x2ce2                   0           0x130  (304)
-.bss                        0x2e12                   0            0x3e  (62)
+.bss                        0x10a6                   0          0x1c54  (7252)
+.data                       0x2cfa                   0           0x130  (304)
+.bss                        0x2e2a                   0            0x3e  (62)
 
-                 Total "data" memory used (bytes):         0x1e50  (7760) 94%
+                 Total "data" memory used (bytes):         0x1e68  (7784) 95%
 
 
 Dynamic Memory Usage
@@ -355,9 +355,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x2e50                               0x1b0  (432)
+stack                       0x2e68                               0x198  (408)
 
-                 Maximum dynamic memory (bytes):          0x1b0  (432)
+                 Maximum dynamic memory (bytes):          0x198  (408)
 
 
 External Symbols in Data Memory (by address):
@@ -4962,21 +4962,21 @@ __c30_signature
  .nbss              0x10a4          0x2 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(errno.CH_o)
                     0x10a4                  _errno
 
-.bss                0x10a6       0x1c3c
- .bss               0x10a6       0x1c3c build/default/production/main.o
+.bss                0x10a6       0x1c54
+ .bss               0x10a6       0x1c54 build/default/production/main.o
                     0x10a6                  _i2cBufferTX
                     0x10ae                  _i2cBufferRX
                     0x10b6                  _accBuffer
                     0x10bc                  _motor_table
 
-.data               0x2ce2        0x130
- .data              0x2ce2        0x130 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libm-elf.a(__rem_pio2_large.CH_o)
+.data               0x2cfa        0x130
+ .data              0x2cfa        0x130 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libm-elf.a(__rem_pio2_large.CH_o)
 
-.bss                0x2e12         0x3e
- .bss               0x2e12         0x20 build/default/production/mcc_generated_files/traps.o
- .bss               0x2e32         0x18 build/default/production/mcc_generated_files/i2c1.o
- .bss               0x2e4a          0x4 build/default/production/mcc_generated_files/sccp1_tmr.o
- .bss               0x2e4e          0x2 build/default/production/mcc_generated_files/tmr1.o
+.bss                0x2e2a         0x3e
+ .bss               0x2e2a         0x20 build/default/production/mcc_generated_files/traps.o
+ .bss               0x2e4a         0x18 build/default/production/mcc_generated_files/i2c1.o
+ .bss               0x2e62          0x4 build/default/production/mcc_generated_files/sccp1_tmr.o
+ .bss               0x2e66          0x2 build/default/production/mcc_generated_files/tmr1.o
 
 mcc_generated_files/boot/memory_partition.S.scn1
                   0x000200       0x1600

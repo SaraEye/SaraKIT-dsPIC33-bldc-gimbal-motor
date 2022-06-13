@@ -158,7 +158,7 @@ volatile uint16_t keepTorqueTimeA = 300, keepTorqueTimeB = 300;
 volatile uint8_t MoveContinuousA=0, MoveContinuousB=0;//ruch ci?g?y =1
 volatile float dirA=1, dirB=1;//kierunek ruchu
 volatile uint16_t defaultTimerPeriod = 0x61a; //0x30D2 2ms, 0x1869 1ms, 0x0C34 0.5ms, 0x61a 0.25ms, 0x2a 0.01ms, 0xcd 0.034ms
-volatile float motor_table[1800]; //360/7=51.42857*5= minimum 7 pair pols - dok?adno?? co 0.2 stopnia
+volatile float motor_table[1806]; //360/7=51.42857*5= minimum 7 pair pols - dok?adno?? co 0.2 stopnia
 
 static void Reset(void){
     asm ("reset");
@@ -208,17 +208,17 @@ float checkAngle(float angle) {
 float computeVoltageVector(float rotorPosition)
 {
     float theta_elec_degrees = ((rotorPosition) + 90 ); // 11 - pole pairs (22P). + 90 because at initial position theta = 90
-    float theta = theta_elec_degrees*PI/180;//Pi/180; // translating into radians
+    float theta = theta_elec_degrees*PI/180.0;//Pi/180; // translating into radians
     return cosf(theta);//cos(theta);
 }
 
 int16_t GetPWM_DutyCycle(float electricalPosition, float vectorAmplitude, int16_t PolePairs, int16_t f)
 {        
-    float ang1=(360/PolePairs);
+    float ang1=(360.0/(float)PolePairs);
     float ang2=electricalPosition;
     while (ang2>=ang1)
         ang2=ang2-ang1;
-    float ang3=(ang2*360)/ang1;
+    float ang3=(ang2*360.0)/ang1;
 
     float v;
     if (f==0)
@@ -683,7 +683,7 @@ int main(void)
 
     //motor_table for 7 pole pair = 360/(360*7*5(0.2stopnia))=dok?adno?? 0.02857 stopnia
     uint16_t a02=0;
-    for(float a=0; a<360; a=a+0.2){
+    for(float a=0; a<=361; a=a+0.2){
         motor_table[a02]=computeVoltageVector(a);
         a02++;
     }               
