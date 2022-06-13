@@ -157,7 +157,7 @@ volatile float curTorqueA = 0.0f, curTorqueB =0.0f;
 volatile uint16_t keepTorqueTimeA = 300, keepTorqueTimeB = 300;
 volatile uint8_t MoveContinuousA=0, MoveContinuousB=0;//ruch ci?g?y =1
 volatile float dirA=1, dirB=1;//kierunek ruchu
-volatile uint16_t defaultTimerPeriod = 0x61a; //0x30D2 2ms, 0x1869 1ms, 0x0C34 0.5ms, 0x61a 0.25ms, 0x2a 0.01ms, 0xcd 0.034ms
+volatile uint16_t defaultTimerPeriod = 0x1869; //0x30D2 2ms, 0x1869 1ms, 0x0C34 0.5ms, 0x61a 0.25ms, 0x2a 0.01ms, 0xcd 0.034ms
 volatile float motor_table[1806]; //360/7=51.42857*5= minimum 7 pair pols - dok?adno?? co 0.2 stopnia
 
 static void Reset(void){
@@ -285,11 +285,11 @@ void timer_interrupt(void){
             lastSpeedA=spd;
                 
             currentPositionA=checkAngle(currentPositionA+step*dirA);
-            if (diffAngle(currentPositionA,targetPositionA,dirA)<0.01)
+            if (diffAngle(currentPositionA,targetPositionA,dirA)<0.03)
                 currentPositionA=targetPositionA;
 
             curTorqueA=torqueA;
-            electricalPositionA=checkAngle(currentPositionA);
+            electricalPositionA=currentPositionA;
             lastMotionA=0;        
         }
     }
@@ -347,13 +347,13 @@ void timer_interrupt(void){
                 }
             } 
             lastSpeedB=spd;
-                
+
             currentPositionB=checkAngle(currentPositionB+step*dirB);
-            if (step<0.01)
+            if (diffAngle(currentPositionB,targetPositionB,dirB)<0.03)
                 currentPositionB=targetPositionB;
 
             curTorqueB=torqueB;
-            electricalPositionB=checkAngle(currentPositionB);
+            electricalPositionB=currentPositionB;
             lastMotionB=0;        
         }
     }
