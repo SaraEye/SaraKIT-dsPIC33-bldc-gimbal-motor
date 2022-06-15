@@ -325,13 +325,13 @@ remappedU3EVTInterrupt      0x1c48                 0x4             0x6  (6)
 remappedADCAN24Interrupt    0x1c4c                 0x4             0x6  (6)
 remappedADCAN25Interrupt    0x1c50                 0x4             0x6  (6)
 .text                       0x1c54              0x1980          0x2640  (9792)
-.text                       0x35d4              0x147c          0x1eba  (7866)
-.text                       0x4a50               0x17c           0x23a  (570)
-.dinit                      0x4bcc               0x144           0x1e6  (486)
-.text                       0x4d10               0x79c           0xb6a  (2922)
+.text                       0x35d4              0x1474          0x1eae  (7854)
+.text                       0x4a48               0x17c           0x23a  (570)
+.dinit                      0x4bc4               0x144           0x1e6  (486)
+.text                       0x4d08               0x79c           0xb6a  (2922)
 mcc_generated_files/boot/memory_partition.S.scn2    0x5800               0x6fe           0xa7d  (2685)
 
-                 Total "program" memory used (bytes):         0x867f  (34431) 96%
+                 Total "program" memory used (bytes):         0x8673  (34419) 96%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x2000]
@@ -537,198 +537,198 @@ External Symbols in Program Memory (by address):
                   0x004364                  _ACC_init
                   0x0043e6                  _readACCdata
                   0x004430                  _main
-                  0x00452e                  _PWM_Initialize
-                  0x0046e2                  _PWM_Generator1_Tasks
-                  0x0046fa                  _PWM_Generator2_Tasks
-                  0x004712                  _PWM_Generator3_Tasks
-                  0x00472c                  _PWM_Generator4_Tasks
-                  0x004746                  _PWM_Generator5_Tasks
-                  0x004760                  _PWM_Generator6_Tasks
-                  0x00477a                  _PWM_EventA_Tasks
-                  0x004794                  _PWM_EventB_Tasks
-                  0x0047ae                  _PWM_EventC_Tasks
-                  0x0047c8                  _PWM_EventD_Tasks
-                  0x0047e2                  _PWM_EventE_Tasks
-                  0x0047fc                  _PWM_EventF_Tasks
-                  0x004810                  _I2C1_Initialize
-                  0x004852                  _I2C1_ErrorCountGet
-                  0x0048a0                  _I2C1_MasterWrite
-                  0x0048e2                  _I2C1_MasterRead
-                  0x004924                  _I2C1_MasterTRBInsert
-                  0x0049b4                  _I2C1_MasterReadTRBBuild
-                  0x0049f0                  _I2C1_MasterWriteTRBBuild
-                  0x004a20                  _I2C1_MasterQueueIsEmpty
-                  0x004a38                  _I2C1_MasterQueueIsFull
-                  0x004a50                  _ADC1_Initialize
-                  0x004b02                  _ADC1_Core0PowerEnable
-                  0x004b18                  _ADC1_Core1PowerEnable
-                  0x004b2e                  _ADC1_SharedCorePowerEnable
-                  0x004b4a                  _ADC1_SetCommonInterruptHandler
-                  0x004b7a                  _ADC1_Setchannel_AN4InterruptHandler
-                  0x004bac                  _ADC1_Setchannel_AN24InterruptHandler
-                  0x004bc0                  _ADC1_Setchannel_AN25InterruptHandler
-                  0x004d10                  _RESET_GetCause
-                  0x004e34                  _RESET_CauseClearAll
-                  0x004e3c                  _SCCP1_TMR_Initialize
-                  0x004e6e                  _SCCP1_TMR_Start
-                  0x004e88                  _SCCP1_TMR_Stop
-                  0x004e96                  _SCCP1_TMR_Period32BitSet
-                  0x004eb0                  _SCCP1_TMR_Period32BitGet
-                  0x004ece                  _SCCP1_TMR_Counter32BitSet
-                  0x004ee8                  _SCCP1_TMR_Counter32BitGet
-                  0x004f06                  _SCCP1_TMR_Timer32ElapsedThenClear
-                  0x004f1e                  _SCCP2_CAPTURE_Initialize
-                  0x004f4c                  _SCCP2_CAPTURE_Start
-                  0x004f54                  _SCCP2_CAPTURE_Stop
-                  0x004f5c                  _getEnc2Val
-                  0x004fc2                  _SCCP2_CAPTURE_Data16Read
-                  0x004fca                  _SCCP2_CAPTURE_HasBufferOverflowed
-                  0x004fe2                  _SCCP2_CAPTURE_IsBufferEmpty
-                  0x004ff6                  _SCCP2_CAPTURE_OverflowFlagReset
-                  0x004ffe                  _SCCP3_CAPTURE_Initialize
-                  0x00502c                  _SCCP3_CAPTURE_Start
-                  0x005034                  _SCCP3_CAPTURE_Stop
-                  0x00503c                  _getEnc1Val
-                  0x0050a2                  _SCCP3_CAPTURE_Data16Read
-                  0x0050aa                  _SCCP3_CAPTURE_HasBufferOverflowed
-                  0x0050c2                  _SCCP3_CAPTURE_IsBufferEmpty
-                  0x0050d6                  _SCCP3_CAPTURE_OverflowFlagReset
-                  0x0050de                  _TMR1_Initialize
-                  0x005102                  _TMR1_Period16BitSet
-                  0x005114                  _TMR1_Period16BitGet
-                  0x00511c                  _TMR1_Counter16BitSet
-                  0x00512e                  _TMR1_Counter16BitGet
-                  0x00513c                  _TMR1_SetInterruptHandler
-                  0x00514c                  _TMR1_Start
-                  0x00515c                  _TMR1_Stop
-                  0x005166                  _TMR1_GetElapsedThenClear
-                  0x00517e                  _TMR1_SoftwareCounterGet
-                  0x00518a                  _TMR1_SoftwareCounterClear
-                  0x005196                  _SCCP4_CAPTURE_Initialize
-                  0x0051bc                  _SCCP4_CAPTURE_Start
-                  0x0051c4                  _SCCP4_CAPTURE_Stop
-                  0x0051d2                  _SCCP4_CAPTURE_Tasks
-                  0x0051ec                  _SCCP4_CAPTURE_TimerTasks
-                  0x005200                  _SCCP4_CAPTURE_Data16Read
-                  0x005208                  _SCCP4_CAPTURE_HasBufferOverflowed
-                  0x005220                  _SCCP4_CAPTURE_IsBufferEmpty
-                  0x005234                  _SCCP4_CAPTURE_OverflowFlagReset
-                  0x00523c                  _SCCP5_CAPTURE_Initialize
-                  0x005262                  _SCCP5_CAPTURE_Start
-                  0x00526a                  _SCCP5_CAPTURE_Stop
-                  0x005278                  _SCCP5_CAPTURE_Tasks
-                  0x005292                  _SCCP5_CAPTURE_TimerTasks
-                  0x0052a6                  _SCCP5_CAPTURE_Data16Read
-                  0x0052ae                  _SCCP5_CAPTURE_HasBufferOverflowed
-                  0x0052c6                  _SCCP5_CAPTURE_IsBufferEmpty
-                  0x0052da                  _SCCP5_CAPTURE_OverflowFlagReset
-                  0x0052e2                  _CLOCK_Initialize
-                  0x00534e                  _CLOCK_AuxPllLockStatusGet
-                  0x005366                  _INTERRUPT_Initialize
-                  0x0053ea                  _PIN_MANAGER_Initialize
-                  0x005486                  _SYSTEM_Initialize
+                  0x004526                  _PWM_Initialize
+                  0x0046da                  _PWM_Generator1_Tasks
+                  0x0046f2                  _PWM_Generator2_Tasks
+                  0x00470a                  _PWM_Generator3_Tasks
+                  0x004724                  _PWM_Generator4_Tasks
+                  0x00473e                  _PWM_Generator5_Tasks
+                  0x004758                  _PWM_Generator6_Tasks
+                  0x004772                  _PWM_EventA_Tasks
+                  0x00478c                  _PWM_EventB_Tasks
+                  0x0047a6                  _PWM_EventC_Tasks
+                  0x0047c0                  _PWM_EventD_Tasks
+                  0x0047da                  _PWM_EventE_Tasks
+                  0x0047f4                  _PWM_EventF_Tasks
+                  0x004808                  _I2C1_Initialize
+                  0x00484a                  _I2C1_ErrorCountGet
+                  0x004898                  _I2C1_MasterWrite
+                  0x0048da                  _I2C1_MasterRead
+                  0x00491c                  _I2C1_MasterTRBInsert
+                  0x0049ac                  _I2C1_MasterReadTRBBuild
+                  0x0049e8                  _I2C1_MasterWriteTRBBuild
+                  0x004a18                  _I2C1_MasterQueueIsEmpty
+                  0x004a30                  _I2C1_MasterQueueIsFull
+                  0x004a48                  _ADC1_Initialize
+                  0x004afa                  _ADC1_Core0PowerEnable
+                  0x004b10                  _ADC1_Core1PowerEnable
+                  0x004b26                  _ADC1_SharedCorePowerEnable
+                  0x004b42                  _ADC1_SetCommonInterruptHandler
+                  0x004b72                  _ADC1_Setchannel_AN4InterruptHandler
+                  0x004ba4                  _ADC1_Setchannel_AN24InterruptHandler
+                  0x004bb8                  _ADC1_Setchannel_AN25InterruptHandler
+                  0x004d08                  _RESET_GetCause
+                  0x004e2c                  _RESET_CauseClearAll
+                  0x004e34                  _SCCP1_TMR_Initialize
+                  0x004e66                  _SCCP1_TMR_Start
+                  0x004e80                  _SCCP1_TMR_Stop
+                  0x004e8e                  _SCCP1_TMR_Period32BitSet
+                  0x004ea8                  _SCCP1_TMR_Period32BitGet
+                  0x004ec6                  _SCCP1_TMR_Counter32BitSet
+                  0x004ee0                  _SCCP1_TMR_Counter32BitGet
+                  0x004efe                  _SCCP1_TMR_Timer32ElapsedThenClear
+                  0x004f16                  _SCCP2_CAPTURE_Initialize
+                  0x004f44                  _SCCP2_CAPTURE_Start
+                  0x004f4c                  _SCCP2_CAPTURE_Stop
+                  0x004f54                  _getEnc2Val
+                  0x004fba                  _SCCP2_CAPTURE_Data16Read
+                  0x004fc2                  _SCCP2_CAPTURE_HasBufferOverflowed
+                  0x004fda                  _SCCP2_CAPTURE_IsBufferEmpty
+                  0x004fee                  _SCCP2_CAPTURE_OverflowFlagReset
+                  0x004ff6                  _SCCP3_CAPTURE_Initialize
+                  0x005024                  _SCCP3_CAPTURE_Start
+                  0x00502c                  _SCCP3_CAPTURE_Stop
+                  0x005034                  _getEnc1Val
+                  0x00509a                  _SCCP3_CAPTURE_Data16Read
+                  0x0050a2                  _SCCP3_CAPTURE_HasBufferOverflowed
+                  0x0050ba                  _SCCP3_CAPTURE_IsBufferEmpty
+                  0x0050ce                  _SCCP3_CAPTURE_OverflowFlagReset
+                  0x0050d6                  _TMR1_Initialize
+                  0x0050fa                  _TMR1_Period16BitSet
+                  0x00510c                  _TMR1_Period16BitGet
+                  0x005114                  _TMR1_Counter16BitSet
+                  0x005126                  _TMR1_Counter16BitGet
+                  0x005134                  _TMR1_SetInterruptHandler
+                  0x005144                  _TMR1_Start
+                  0x005154                  _TMR1_Stop
+                  0x00515e                  _TMR1_GetElapsedThenClear
+                  0x005176                  _TMR1_SoftwareCounterGet
+                  0x005182                  _TMR1_SoftwareCounterClear
+                  0x00518e                  _SCCP4_CAPTURE_Initialize
+                  0x0051b4                  _SCCP4_CAPTURE_Start
+                  0x0051bc                  _SCCP4_CAPTURE_Stop
+                  0x0051ca                  _SCCP4_CAPTURE_Tasks
+                  0x0051e4                  _SCCP4_CAPTURE_TimerTasks
+                  0x0051f8                  _SCCP4_CAPTURE_Data16Read
+                  0x005200                  _SCCP4_CAPTURE_HasBufferOverflowed
+                  0x005218                  _SCCP4_CAPTURE_IsBufferEmpty
+                  0x00522c                  _SCCP4_CAPTURE_OverflowFlagReset
+                  0x005234                  _SCCP5_CAPTURE_Initialize
+                  0x00525a                  _SCCP5_CAPTURE_Start
+                  0x005262                  _SCCP5_CAPTURE_Stop
+                  0x005270                  _SCCP5_CAPTURE_Tasks
+                  0x00528a                  _SCCP5_CAPTURE_TimerTasks
+                  0x00529e                  _SCCP5_CAPTURE_Data16Read
+                  0x0052a6                  _SCCP5_CAPTURE_HasBufferOverflowed
+                  0x0052be                  _SCCP5_CAPTURE_IsBufferEmpty
+                  0x0052d2                  _SCCP5_CAPTURE_OverflowFlagReset
+                  0x0052da                  _CLOCK_Initialize
+                  0x005346                  _CLOCK_AuxPllLockStatusGet
+                  0x00535e                  _INTERRUPT_Initialize
+                  0x0053e2                  _PIN_MANAGER_Initialize
+                  0x00547e                  _SYSTEM_Initialize
                   0x005f00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
                   0x004364                  _ACC_init
-                  0x004b02                  _ADC1_Core0PowerEnable
-                  0x004b18                  _ADC1_Core1PowerEnable
-                  0x004a50                  _ADC1_Initialize
-                  0x004b4a                  _ADC1_SetCommonInterruptHandler
-                  0x004bac                  _ADC1_Setchannel_AN24InterruptHandler
-                  0x004bc0                  _ADC1_Setchannel_AN25InterruptHandler
-                  0x004b7a                  _ADC1_Setchannel_AN4InterruptHandler
-                  0x004b2e                  _ADC1_SharedCorePowerEnable
-                  0x00534e                  _CLOCK_AuxPllLockStatusGet
-                  0x0052e2                  _CLOCK_Initialize
+                  0x004afa                  _ADC1_Core0PowerEnable
+                  0x004b10                  _ADC1_Core1PowerEnable
+                  0x004a48                  _ADC1_Initialize
+                  0x004b42                  _ADC1_SetCommonInterruptHandler
+                  0x004ba4                  _ADC1_Setchannel_AN24InterruptHandler
+                  0x004bb8                  _ADC1_Setchannel_AN25InterruptHandler
+                  0x004b72                  _ADC1_Setchannel_AN4InterruptHandler
+                  0x004b26                  _ADC1_SharedCorePowerEnable
+                  0x005346                  _CLOCK_AuxPllLockStatusGet
+                  0x0052da                  _CLOCK_Initialize
                   0x004346                  _Delay
                   0x00379a                  _GetPWM_DutyCycle
-                  0x004852                  _I2C1_ErrorCountGet
-                  0x004810                  _I2C1_Initialize
-                  0x004a20                  _I2C1_MasterQueueIsEmpty
-                  0x004a38                  _I2C1_MasterQueueIsFull
-                  0x0048e2                  _I2C1_MasterRead
-                  0x0049b4                  _I2C1_MasterReadTRBBuild
-                  0x004924                  _I2C1_MasterTRBInsert
-                  0x0048a0                  _I2C1_MasterWrite
-                  0x0049f0                  _I2C1_MasterWriteTRBBuild
-                  0x005366                  _INTERRUPT_Initialize
-                  0x0053ea                  _PIN_MANAGER_Initialize
-                  0x00477a                  _PWM_EventA_Tasks
-                  0x004794                  _PWM_EventB_Tasks
-                  0x0047ae                  _PWM_EventC_Tasks
-                  0x0047c8                  _PWM_EventD_Tasks
-                  0x0047e2                  _PWM_EventE_Tasks
-                  0x0047fc                  _PWM_EventF_Tasks
-                  0x0046e2                  _PWM_Generator1_Tasks
-                  0x0046fa                  _PWM_Generator2_Tasks
-                  0x004712                  _PWM_Generator3_Tasks
-                  0x00472c                  _PWM_Generator4_Tasks
-                  0x004746                  _PWM_Generator5_Tasks
-                  0x004760                  _PWM_Generator6_Tasks
-                  0x00452e                  _PWM_Initialize
-                  0x004e34                  _RESET_CauseClearAll
-                  0x004d10                  _RESET_GetCause
-                  0x004ee8                  _SCCP1_TMR_Counter32BitGet
-                  0x004ece                  _SCCP1_TMR_Counter32BitSet
-                  0x004e3c                  _SCCP1_TMR_Initialize
-                  0x004eb0                  _SCCP1_TMR_Period32BitGet
-                  0x004e96                  _SCCP1_TMR_Period32BitSet
-                  0x004e6e                  _SCCP1_TMR_Start
-                  0x004e88                  _SCCP1_TMR_Stop
+                  0x00484a                  _I2C1_ErrorCountGet
+                  0x004808                  _I2C1_Initialize
+                  0x004a18                  _I2C1_MasterQueueIsEmpty
+                  0x004a30                  _I2C1_MasterQueueIsFull
+                  0x0048da                  _I2C1_MasterRead
+                  0x0049ac                  _I2C1_MasterReadTRBBuild
+                  0x00491c                  _I2C1_MasterTRBInsert
+                  0x004898                  _I2C1_MasterWrite
+                  0x0049e8                  _I2C1_MasterWriteTRBBuild
+                  0x00535e                  _INTERRUPT_Initialize
+                  0x0053e2                  _PIN_MANAGER_Initialize
+                  0x004772                  _PWM_EventA_Tasks
+                  0x00478c                  _PWM_EventB_Tasks
+                  0x0047a6                  _PWM_EventC_Tasks
+                  0x0047c0                  _PWM_EventD_Tasks
+                  0x0047da                  _PWM_EventE_Tasks
+                  0x0047f4                  _PWM_EventF_Tasks
+                  0x0046da                  _PWM_Generator1_Tasks
+                  0x0046f2                  _PWM_Generator2_Tasks
+                  0x00470a                  _PWM_Generator3_Tasks
+                  0x004724                  _PWM_Generator4_Tasks
+                  0x00473e                  _PWM_Generator5_Tasks
+                  0x004758                  _PWM_Generator6_Tasks
+                  0x004526                  _PWM_Initialize
+                  0x004e2c                  _RESET_CauseClearAll
+                  0x004d08                  _RESET_GetCause
+                  0x004ee0                  _SCCP1_TMR_Counter32BitGet
+                  0x004ec6                  _SCCP1_TMR_Counter32BitSet
+                  0x004e34                  _SCCP1_TMR_Initialize
+                  0x004ea8                  _SCCP1_TMR_Period32BitGet
+                  0x004e8e                  _SCCP1_TMR_Period32BitSet
+                  0x004e66                  _SCCP1_TMR_Start
+                  0x004e80                  _SCCP1_TMR_Stop
                   0x00364c                  _SCCP1_TMR_Timer32CallBack
-                  0x004f06                  _SCCP1_TMR_Timer32ElapsedThenClear
-                  0x004fc2                  _SCCP2_CAPTURE_Data16Read
-                  0x004fca                  _SCCP2_CAPTURE_HasBufferOverflowed
-                  0x004f1e                  _SCCP2_CAPTURE_Initialize
-                  0x004fe2                  _SCCP2_CAPTURE_IsBufferEmpty
-                  0x004ff6                  _SCCP2_CAPTURE_OverflowFlagReset
-                  0x004f4c                  _SCCP2_CAPTURE_Start
-                  0x004f54                  _SCCP2_CAPTURE_Stop
-                  0x0050a2                  _SCCP3_CAPTURE_Data16Read
-                  0x0050aa                  _SCCP3_CAPTURE_HasBufferOverflowed
-                  0x004ffe                  _SCCP3_CAPTURE_Initialize
-                  0x0050c2                  _SCCP3_CAPTURE_IsBufferEmpty
-                  0x0050d6                  _SCCP3_CAPTURE_OverflowFlagReset
-                  0x00502c                  _SCCP3_CAPTURE_Start
-                  0x005034                  _SCCP3_CAPTURE_Stop
-                  0x005200                  _SCCP4_CAPTURE_Data16Read
-                  0x005208                  _SCCP4_CAPTURE_HasBufferOverflowed
-                  0x005196                  _SCCP4_CAPTURE_Initialize
-                  0x005220                  _SCCP4_CAPTURE_IsBufferEmpty
-                  0x005234                  _SCCP4_CAPTURE_OverflowFlagReset
-                  0x0051bc                  _SCCP4_CAPTURE_Start
-                  0x0051c4                  _SCCP4_CAPTURE_Stop
-                  0x0051d2                  _SCCP4_CAPTURE_Tasks
-                  0x0051ec                  _SCCP4_CAPTURE_TimerTasks
-                  0x0052a6                  _SCCP5_CAPTURE_Data16Read
-                  0x0052ae                  _SCCP5_CAPTURE_HasBufferOverflowed
-                  0x00523c                  _SCCP5_CAPTURE_Initialize
-                  0x0052c6                  _SCCP5_CAPTURE_IsBufferEmpty
-                  0x0052da                  _SCCP5_CAPTURE_OverflowFlagReset
-                  0x005262                  _SCCP5_CAPTURE_Start
-                  0x00526a                  _SCCP5_CAPTURE_Stop
-                  0x005278                  _SCCP5_CAPTURE_Tasks
-                  0x005292                  _SCCP5_CAPTURE_TimerTasks
+                  0x004efe                  _SCCP1_TMR_Timer32ElapsedThenClear
+                  0x004fba                  _SCCP2_CAPTURE_Data16Read
+                  0x004fc2                  _SCCP2_CAPTURE_HasBufferOverflowed
+                  0x004f16                  _SCCP2_CAPTURE_Initialize
+                  0x004fda                  _SCCP2_CAPTURE_IsBufferEmpty
+                  0x004fee                  _SCCP2_CAPTURE_OverflowFlagReset
+                  0x004f44                  _SCCP2_CAPTURE_Start
+                  0x004f4c                  _SCCP2_CAPTURE_Stop
+                  0x00509a                  _SCCP3_CAPTURE_Data16Read
+                  0x0050a2                  _SCCP3_CAPTURE_HasBufferOverflowed
+                  0x004ff6                  _SCCP3_CAPTURE_Initialize
+                  0x0050ba                  _SCCP3_CAPTURE_IsBufferEmpty
+                  0x0050ce                  _SCCP3_CAPTURE_OverflowFlagReset
+                  0x005024                  _SCCP3_CAPTURE_Start
+                  0x00502c                  _SCCP3_CAPTURE_Stop
+                  0x0051f8                  _SCCP4_CAPTURE_Data16Read
+                  0x005200                  _SCCP4_CAPTURE_HasBufferOverflowed
+                  0x00518e                  _SCCP4_CAPTURE_Initialize
+                  0x005218                  _SCCP4_CAPTURE_IsBufferEmpty
+                  0x00522c                  _SCCP4_CAPTURE_OverflowFlagReset
+                  0x0051b4                  _SCCP4_CAPTURE_Start
+                  0x0051bc                  _SCCP4_CAPTURE_Stop
+                  0x0051ca                  _SCCP4_CAPTURE_Tasks
+                  0x0051e4                  _SCCP4_CAPTURE_TimerTasks
+                  0x00529e                  _SCCP5_CAPTURE_Data16Read
+                  0x0052a6                  _SCCP5_CAPTURE_HasBufferOverflowed
+                  0x005234                  _SCCP5_CAPTURE_Initialize
+                  0x0052be                  _SCCP5_CAPTURE_IsBufferEmpty
+                  0x0052d2                  _SCCP5_CAPTURE_OverflowFlagReset
+                  0x00525a                  _SCCP5_CAPTURE_Start
+                  0x005262                  _SCCP5_CAPTURE_Stop
+                  0x005270                  _SCCP5_CAPTURE_Tasks
+                  0x00528a                  _SCCP5_CAPTURE_TimerTasks
                   0x001838                  _SPI1_Exchange
                   0x0019ae                  _SPI1_Exchange32bit
                   0x0019c0                  _SPI1_Exchange32bitBuffer
                   0x00187a                  _SPI1_ExchangeBuffer
                   0x001816                  _SPI1_Initialize
                   0x0019de                  _SPI1_StatusGet
-                  0x005486                  _SYSTEM_Initialize
-                  0x00512e                  _TMR1_Counter16BitGet
-                  0x00511c                  _TMR1_Counter16BitSet
-                  0x005166                  _TMR1_GetElapsedThenClear
-                  0x0050de                  _TMR1_Initialize
-                  0x005114                  _TMR1_Period16BitGet
-                  0x005102                  _TMR1_Period16BitSet
-                  0x00513c                  _TMR1_SetInterruptHandler
-                  0x00518a                  _TMR1_SoftwareCounterClear
-                  0x00517e                  _TMR1_SoftwareCounterGet
-                  0x00514c                  _TMR1_Start
-                  0x00515c                  _TMR1_Stop
+                  0x00547e                  _SYSTEM_Initialize
+                  0x005126                  _TMR1_Counter16BitGet
+                  0x005114                  _TMR1_Counter16BitSet
+                  0x00515e                  _TMR1_GetElapsedThenClear
+                  0x0050d6                  _TMR1_Initialize
+                  0x00510c                  _TMR1_Period16BitGet
+                  0x0050fa                  _TMR1_Period16BitSet
+                  0x005134                  _TMR1_SetInterruptHandler
+                  0x005182                  _TMR1_SoftwareCounterClear
+                  0x005176                  _TMR1_SoftwareCounterGet
+                  0x005144                  _TMR1_Start
+                  0x005154                  _TMR1_Stop
                   0x001da8                  __AddressError
                   0x0021c4                  __CCP2Interrupt
                   0x002214                  __CCP3Interrupt
@@ -792,8 +792,8 @@ External Symbols in Program Memory (by name):
                   0x002b0e                  _cosf
                   0x0036a6                  _diffAngle
                   0x0034a8                  _floor
-                  0x00503c                  _getEnc1Val
-                  0x004f5c                  _getEnc2Val
+                  0x005034                  _getEnc1Val
+                  0x004f54                  _getEnc2Val
                   0x004430                  _main
                   0x0035ba                  _memcpy
                   0x004242                  _parseMotorGetInfo
@@ -1176,7 +1176,7 @@ __FBTSEQ
  .debug_abbrev    0x001619         0x14 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.CH_o)
  .debug_abbrev    0x00162d         0x14 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.CH_o)
 
-.debug_line       0x000000       0x30c8
+.debug_line       0x000000       0x30c4
  *(.debug_line)
  .debug_line      0x000000         0x1a build/default/production/mcc_generated_files/boot/interrupts.o
  .debug_line      0x00001a         0x1a build/default/production/mcc_generated_files/boot/memory_partition.o
@@ -1200,30 +1200,30 @@ __FBTSEQ
  .debug_line      0x001fad        0x18f build/default/production/mcc_generated_files/sccp3_capture.o
  .debug_line      0x00213c        0x152 build/default/production/mcc_generated_files/sccp4_capture.o
  .debug_line      0x00228e        0x152 build/default/production/mcc_generated_files/sccp5_capture.o
- .debug_line      0x0023e0        0x350 build/default/production/main.o
- .debug_line      0x002730         0x37 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.CH_o)
- .debug_line      0x002767         0x35 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.CH_o)
- .debug_line      0x00279c         0x56 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.CH_o)
- .debug_line      0x0027f2         0x53 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.CH_o)
- .debug_line      0x002845         0x3a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.CH_o)
- .debug_line      0x00287f         0x3b c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.CH_o)
- .debug_line      0x0028ba         0x4a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(funpack.CH_o)
- .debug_line      0x002904        0x136 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.CH_o)
- .debug_line      0x002a3a        0x124 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.CH_o)
- .debug_line      0x002b5e         0xcc c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.CH_o)
- .debug_line      0x002c2a         0x72 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.CH_o)
- .debug_line      0x002c9c         0x7a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.CH_o)
- .debug_line      0x002d16         0x5e c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(typefx.CH_o)
- .debug_line      0x002d74         0x51 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.CH_o)
- .debug_line      0x002dc5         0x98 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.CH_o)
- .debug_line      0x002e5d         0x79 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.CH_o)
- .debug_line      0x002ed6         0x1a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(errno.CH_o)
- .debug_line      0x002ef0         0x53 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.CH_o)
- .debug_line      0x002f43         0x47 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.CH_o)
- .debug_line      0x002f8a         0x6c c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.CH_o)
- .debug_line      0x002ff6         0x5a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fpack.CH_o)
- .debug_line      0x003050         0x3e c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.CH_o)
- .debug_line      0x00308e         0x3a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.CH_o)
+ .debug_line      0x0023e0        0x34c build/default/production/main.o
+ .debug_line      0x00272c         0x37 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.CH_o)
+ .debug_line      0x002763         0x35 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.CH_o)
+ .debug_line      0x002798         0x56 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.CH_o)
+ .debug_line      0x0027ee         0x53 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.CH_o)
+ .debug_line      0x002841         0x3a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.CH_o)
+ .debug_line      0x00287b         0x3b c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.CH_o)
+ .debug_line      0x0028b6         0x4a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(funpack.CH_o)
+ .debug_line      0x002900        0x136 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.CH_o)
+ .debug_line      0x002a36        0x124 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.CH_o)
+ .debug_line      0x002b5a         0xcc c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.CH_o)
+ .debug_line      0x002c26         0x72 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.CH_o)
+ .debug_line      0x002c98         0x7a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.CH_o)
+ .debug_line      0x002d12         0x5e c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(typefx.CH_o)
+ .debug_line      0x002d70         0x51 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.CH_o)
+ .debug_line      0x002dc1         0x98 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.CH_o)
+ .debug_line      0x002e59         0x79 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.CH_o)
+ .debug_line      0x002ed2         0x1a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(errno.CH_o)
+ .debug_line      0x002eec         0x53 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.CH_o)
+ .debug_line      0x002f3f         0x47 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.CH_o)
+ .debug_line      0x002f86         0x6c c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.CH_o)
+ .debug_line      0x002ff2         0x5a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(fpack.CH_o)
+ .debug_line      0x00304c         0x3e c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.CH_o)
+ .debug_line      0x00308a         0x3a c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.CH_o)
 
 .debug_frame      0x000000       0x15ee
  *(.debug_frame)
@@ -6717,8 +6717,8 @@ remappedADCAN25Interrupt
  .ivt._SPI1RXInterrupt
                     0x0026          0x2 build/default/production/main.o
 
-.text             0x0035d4       0x147c
- .text            0x0035d4        0xf5a build/default/production/main.o
+.text             0x0035d4       0x1474
+ .text            0x0035d4        0xf52 build/default/production/main.o
                   0x00364c                  _SCCP1_TMR_Timer32CallBack
                   0x003680                  _absf
                   0x0036a6                  _diffAngle
@@ -6740,42 +6740,42 @@ remappedADCAN25Interrupt
                   0x004364                  _ACC_init
                   0x0043e6                  _readACCdata
                   0x004430                  _main
- .text            0x00452e        0x2e2 build/default/production/mcc_generated_files/pwm.o
-                  0x00452e                  _PWM_Initialize
-                  0x0046dc                  _PWM_Generator1_CallBack
-                  0x0046e2                  _PWM_Generator1_Tasks
-                  0x0046f4                  _PWM_Generator2_CallBack
-                  0x0046fa                  _PWM_Generator2_Tasks
-                  0x00470c                  _PWM_Generator3_CallBack
-                  0x004712                  _PWM_Generator3_Tasks
-                  0x004726                  _PWM_Generator4_CallBack
-                  0x00472c                  _PWM_Generator4_Tasks
-                  0x004740                  _PWM_Generator5_CallBack
-                  0x004746                  _PWM_Generator5_Tasks
-                  0x00475a                  _PWM_Generator6_CallBack
-                  0x004760                  _PWM_Generator6_Tasks
-                  0x004774                  _PWM_EventA_CallBack
-                  0x00477a                  _PWM_EventA_Tasks
-                  0x00478e                  _PWM_EventB_CallBack
-                  0x004794                  _PWM_EventB_Tasks
-                  0x0047a8                  _PWM_EventC_CallBack
-                  0x0047ae                  _PWM_EventC_Tasks
-                  0x0047c2                  _PWM_EventD_CallBack
-                  0x0047c8                  _PWM_EventD_Tasks
-                  0x0047dc                  _PWM_EventE_CallBack
-                  0x0047e2                  _PWM_EventE_Tasks
-                  0x0047f6                  _PWM_EventF_CallBack
-                  0x0047fc                  _PWM_EventF_Tasks
- .text            0x004810        0x240 build/default/production/mcc_generated_files/i2c1.o
-                  0x004810                  _I2C1_Initialize
-                  0x004852                  _I2C1_ErrorCountGet
-                  0x0048a0                  _I2C1_MasterWrite
-                  0x0048e2                  _I2C1_MasterRead
-                  0x004924                  _I2C1_MasterTRBInsert
-                  0x0049b4                  _I2C1_MasterReadTRBBuild
-                  0x0049f0                  _I2C1_MasterWriteTRBBuild
-                  0x004a20                  _I2C1_MasterQueueIsEmpty
-                  0x004a38                  _I2C1_MasterQueueIsFull
+ .text            0x004526        0x2e2 build/default/production/mcc_generated_files/pwm.o
+                  0x004526                  _PWM_Initialize
+                  0x0046d4                  _PWM_Generator1_CallBack
+                  0x0046da                  _PWM_Generator1_Tasks
+                  0x0046ec                  _PWM_Generator2_CallBack
+                  0x0046f2                  _PWM_Generator2_Tasks
+                  0x004704                  _PWM_Generator3_CallBack
+                  0x00470a                  _PWM_Generator3_Tasks
+                  0x00471e                  _PWM_Generator4_CallBack
+                  0x004724                  _PWM_Generator4_Tasks
+                  0x004738                  _PWM_Generator5_CallBack
+                  0x00473e                  _PWM_Generator5_Tasks
+                  0x004752                  _PWM_Generator6_CallBack
+                  0x004758                  _PWM_Generator6_Tasks
+                  0x00476c                  _PWM_EventA_CallBack
+                  0x004772                  _PWM_EventA_Tasks
+                  0x004786                  _PWM_EventB_CallBack
+                  0x00478c                  _PWM_EventB_Tasks
+                  0x0047a0                  _PWM_EventC_CallBack
+                  0x0047a6                  _PWM_EventC_Tasks
+                  0x0047ba                  _PWM_EventD_CallBack
+                  0x0047c0                  _PWM_EventD_Tasks
+                  0x0047d4                  _PWM_EventE_CallBack
+                  0x0047da                  _PWM_EventE_Tasks
+                  0x0047ee                  _PWM_EventF_CallBack
+                  0x0047f4                  _PWM_EventF_Tasks
+ .text            0x004808        0x240 build/default/production/mcc_generated_files/i2c1.o
+                  0x004808                  _I2C1_Initialize
+                  0x00484a                  _I2C1_ErrorCountGet
+                  0x004898                  _I2C1_MasterWrite
+                  0x0048da                  _I2C1_MasterRead
+                  0x00491c                  _I2C1_MasterTRBInsert
+                  0x0049ac                  _I2C1_MasterReadTRBBuild
+                  0x0049e8                  _I2C1_MasterWriteTRBBuild
+                  0x004a18                  _I2C1_MasterQueueIsEmpty
+                  0x004a30                  _I2C1_MasterQueueIsFull
 
 .text             0x001816        0x1d0
  .text            0x001816        0x1d0 build/default/production/mcc_generated_files/spi1.o
@@ -6786,108 +6786,108 @@ remappedADCAN25Interrupt
                   0x0019c0                  _SPI1_Exchange32bitBuffer
                   0x0019de                  _SPI1_StatusGet
 
-.text             0x004a50        0x17c
- .text            0x004a50        0x17c build/default/production/mcc_generated_files/adc1.o
-                  0x004a50                  _ADC1_Initialize
-                  0x004b02                  _ADC1_Core0PowerEnable
-                  0x004b18                  _ADC1_Core1PowerEnable
-                  0x004b2e                  _ADC1_SharedCorePowerEnable
-                  0x004b44                  _ADC1_CallBack
-                  0x004b4a                  _ADC1_SetCommonInterruptHandler
-                  0x004b56                  _ADC1_Tasks
-                  0x004b72                  _ADC1_channel_AN4_CallBack
-                  0x004b7a                  _ADC1_Setchannel_AN4InterruptHandler
-                  0x004b86                  _ADC1_channel_AN4_Tasks
-                  0x004ba4                  _ADC1_channel_AN24_CallBack
-                  0x004bac                  _ADC1_Setchannel_AN24InterruptHandler
-                  0x004bb8                  _ADC1_channel_AN25_CallBack
-                  0x004bc0                  _ADC1_Setchannel_AN25InterruptHandler
+.text             0x004a48        0x17c
+ .text            0x004a48        0x17c build/default/production/mcc_generated_files/adc1.o
+                  0x004a48                  _ADC1_Initialize
+                  0x004afa                  _ADC1_Core0PowerEnable
+                  0x004b10                  _ADC1_Core1PowerEnable
+                  0x004b26                  _ADC1_SharedCorePowerEnable
+                  0x004b3c                  _ADC1_CallBack
+                  0x004b42                  _ADC1_SetCommonInterruptHandler
+                  0x004b4e                  _ADC1_Tasks
+                  0x004b6a                  _ADC1_channel_AN4_CallBack
+                  0x004b72                  _ADC1_Setchannel_AN4InterruptHandler
+                  0x004b7e                  _ADC1_channel_AN4_Tasks
+                  0x004b9c                  _ADC1_channel_AN24_CallBack
+                  0x004ba4                  _ADC1_Setchannel_AN24InterruptHandler
+                  0x004bb0                  _ADC1_channel_AN25_CallBack
+                  0x004bb8                  _ADC1_Setchannel_AN25InterruptHandler
 
-.dinit            0x004bcc        0x144
- .dinit           0x004bcc        0x144 data_init
+.dinit            0x004bc4        0x144
+ .dinit           0x004bc4        0x144 data_init
 
-.text             0x004d10        0x79c
- .text            0x004d10        0x12c build/default/production/mcc_generated_files/reset.o
-                  0x004d10                  _RESET_GetCause
-                  0x004d18                  _RESET_CauseHandler
-                  0x004e34                  _RESET_CauseClearAll
- .text            0x004e3c         0xe2 build/default/production/mcc_generated_files/sccp1_tmr.o
-                  0x004e3c                  _SCCP1_TMR_Initialize
-                  0x004e6e                  _SCCP1_TMR_Start
-                  0x004e88                  _SCCP1_TMR_Stop
-                  0x004e96                  _SCCP1_TMR_Period32BitSet
-                  0x004eb0                  _SCCP1_TMR_Period32BitGet
-                  0x004ece                  _SCCP1_TMR_Counter32BitSet
-                  0x004ee8                  _SCCP1_TMR_Counter32BitGet
-                  0x004f06                  _SCCP1_TMR_Timer32ElapsedThenClear
- .text            0x004f1e         0xe0 build/default/production/mcc_generated_files/sccp2_capture.o
-                  0x004f1e                  _SCCP2_CAPTURE_Initialize
-                  0x004f4c                  _SCCP2_CAPTURE_Start
-                  0x004f54                  _SCCP2_CAPTURE_Stop
-                  0x004f5c                  _getEnc2Val
-                  0x004f6a                  _SCCP2_CAPTURE_CallBack
-                  0x004fbc                  _SCCP2_CAPTURE_TimerCallBack
-                  0x004fc2                  _SCCP2_CAPTURE_Data16Read
-                  0x004fca                  _SCCP2_CAPTURE_HasBufferOverflowed
-                  0x004fe2                  _SCCP2_CAPTURE_IsBufferEmpty
-                  0x004ff6                  _SCCP2_CAPTURE_OverflowFlagReset
- .text            0x004ffe         0xe0 build/default/production/mcc_generated_files/sccp3_capture.o
-                  0x004ffe                  _SCCP3_CAPTURE_Initialize
-                  0x00502c                  _SCCP3_CAPTURE_Start
-                  0x005034                  _SCCP3_CAPTURE_Stop
-                  0x00503c                  _getEnc1Val
-                  0x00504a                  _SCCP3_CAPTURE_CallBack
-                  0x00509c                  _SCCP3_CAPTURE_TimerCallBack
-                  0x0050a2                  _SCCP3_CAPTURE_Data16Read
-                  0x0050aa                  _SCCP3_CAPTURE_HasBufferOverflowed
-                  0x0050c2                  _SCCP3_CAPTURE_IsBufferEmpty
-                  0x0050d6                  _SCCP3_CAPTURE_OverflowFlagReset
- .text            0x0050de         0xb8 build/default/production/mcc_generated_files/tmr1.o
-                  0x0050de                  _TMR1_Initialize
-                  0x005102                  _TMR1_Period16BitSet
-                  0x005114                  _TMR1_Period16BitGet
-                  0x00511c                  _TMR1_Counter16BitSet
-                  0x00512e                  _TMR1_Counter16BitGet
-                  0x005136                  _TMR1_CallBack
-                  0x00513c                  _TMR1_SetInterruptHandler
-                  0x00514c                  _TMR1_Start
-                  0x00515c                  _TMR1_Stop
-                  0x005166                  _TMR1_GetElapsedThenClear
-                  0x00517e                  _TMR1_SoftwareCounterGet
-                  0x00518a                  _TMR1_SoftwareCounterClear
- .text            0x005196         0xa6 build/default/production/mcc_generated_files/sccp4_capture.o
-                  0x005196                  _SCCP4_CAPTURE_Initialize
-                  0x0051bc                  _SCCP4_CAPTURE_Start
-                  0x0051c4                  _SCCP4_CAPTURE_Stop
-                  0x0051cc                  _SCCP4_CAPTURE_CallBack
-                  0x0051d2                  _SCCP4_CAPTURE_Tasks
-                  0x0051e6                  _SCCP4_CAPTURE_TimerCallBack
-                  0x0051ec                  _SCCP4_CAPTURE_TimerTasks
-                  0x005200                  _SCCP4_CAPTURE_Data16Read
-                  0x005208                  _SCCP4_CAPTURE_HasBufferOverflowed
-                  0x005220                  _SCCP4_CAPTURE_IsBufferEmpty
-                  0x005234                  _SCCP4_CAPTURE_OverflowFlagReset
- .text            0x00523c         0xa6 build/default/production/mcc_generated_files/sccp5_capture.o
-                  0x00523c                  _SCCP5_CAPTURE_Initialize
-                  0x005262                  _SCCP5_CAPTURE_Start
-                  0x00526a                  _SCCP5_CAPTURE_Stop
-                  0x005272                  _SCCP5_CAPTURE_CallBack
-                  0x005278                  _SCCP5_CAPTURE_Tasks
-                  0x00528c                  _SCCP5_CAPTURE_TimerCallBack
-                  0x005292                  _SCCP5_CAPTURE_TimerTasks
-                  0x0052a6                  _SCCP5_CAPTURE_Data16Read
-                  0x0052ae                  _SCCP5_CAPTURE_HasBufferOverflowed
-                  0x0052c6                  _SCCP5_CAPTURE_IsBufferEmpty
-                  0x0052da                  _SCCP5_CAPTURE_OverflowFlagReset
- .text            0x0052e2         0x84 build/default/production/mcc_generated_files/clock.o
-                  0x0052e2                  _CLOCK_Initialize
-                  0x00534e                  _CLOCK_AuxPllLockStatusGet
- .text            0x005366         0x84 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x005366                  _INTERRUPT_Initialize
- .text            0x0053ea         0x7e build/default/production/mcc_generated_files/pin_manager.o
-                  0x0053ea                  _PIN_MANAGER_Initialize
- .text            0x005468         0x44 build/default/production/mcc_generated_files/system.o
-                  0x005486                  _SYSTEM_Initialize
+.text             0x004d08        0x79c
+ .text            0x004d08        0x12c build/default/production/mcc_generated_files/reset.o
+                  0x004d08                  _RESET_GetCause
+                  0x004d10                  _RESET_CauseHandler
+                  0x004e2c                  _RESET_CauseClearAll
+ .text            0x004e34         0xe2 build/default/production/mcc_generated_files/sccp1_tmr.o
+                  0x004e34                  _SCCP1_TMR_Initialize
+                  0x004e66                  _SCCP1_TMR_Start
+                  0x004e80                  _SCCP1_TMR_Stop
+                  0x004e8e                  _SCCP1_TMR_Period32BitSet
+                  0x004ea8                  _SCCP1_TMR_Period32BitGet
+                  0x004ec6                  _SCCP1_TMR_Counter32BitSet
+                  0x004ee0                  _SCCP1_TMR_Counter32BitGet
+                  0x004efe                  _SCCP1_TMR_Timer32ElapsedThenClear
+ .text            0x004f16         0xe0 build/default/production/mcc_generated_files/sccp2_capture.o
+                  0x004f16                  _SCCP2_CAPTURE_Initialize
+                  0x004f44                  _SCCP2_CAPTURE_Start
+                  0x004f4c                  _SCCP2_CAPTURE_Stop
+                  0x004f54                  _getEnc2Val
+                  0x004f62                  _SCCP2_CAPTURE_CallBack
+                  0x004fb4                  _SCCP2_CAPTURE_TimerCallBack
+                  0x004fba                  _SCCP2_CAPTURE_Data16Read
+                  0x004fc2                  _SCCP2_CAPTURE_HasBufferOverflowed
+                  0x004fda                  _SCCP2_CAPTURE_IsBufferEmpty
+                  0x004fee                  _SCCP2_CAPTURE_OverflowFlagReset
+ .text            0x004ff6         0xe0 build/default/production/mcc_generated_files/sccp3_capture.o
+                  0x004ff6                  _SCCP3_CAPTURE_Initialize
+                  0x005024                  _SCCP3_CAPTURE_Start
+                  0x00502c                  _SCCP3_CAPTURE_Stop
+                  0x005034                  _getEnc1Val
+                  0x005042                  _SCCP3_CAPTURE_CallBack
+                  0x005094                  _SCCP3_CAPTURE_TimerCallBack
+                  0x00509a                  _SCCP3_CAPTURE_Data16Read
+                  0x0050a2                  _SCCP3_CAPTURE_HasBufferOverflowed
+                  0x0050ba                  _SCCP3_CAPTURE_IsBufferEmpty
+                  0x0050ce                  _SCCP3_CAPTURE_OverflowFlagReset
+ .text            0x0050d6         0xb8 build/default/production/mcc_generated_files/tmr1.o
+                  0x0050d6                  _TMR1_Initialize
+                  0x0050fa                  _TMR1_Period16BitSet
+                  0x00510c                  _TMR1_Period16BitGet
+                  0x005114                  _TMR1_Counter16BitSet
+                  0x005126                  _TMR1_Counter16BitGet
+                  0x00512e                  _TMR1_CallBack
+                  0x005134                  _TMR1_SetInterruptHandler
+                  0x005144                  _TMR1_Start
+                  0x005154                  _TMR1_Stop
+                  0x00515e                  _TMR1_GetElapsedThenClear
+                  0x005176                  _TMR1_SoftwareCounterGet
+                  0x005182                  _TMR1_SoftwareCounterClear
+ .text            0x00518e         0xa6 build/default/production/mcc_generated_files/sccp4_capture.o
+                  0x00518e                  _SCCP4_CAPTURE_Initialize
+                  0x0051b4                  _SCCP4_CAPTURE_Start
+                  0x0051bc                  _SCCP4_CAPTURE_Stop
+                  0x0051c4                  _SCCP4_CAPTURE_CallBack
+                  0x0051ca                  _SCCP4_CAPTURE_Tasks
+                  0x0051de                  _SCCP4_CAPTURE_TimerCallBack
+                  0x0051e4                  _SCCP4_CAPTURE_TimerTasks
+                  0x0051f8                  _SCCP4_CAPTURE_Data16Read
+                  0x005200                  _SCCP4_CAPTURE_HasBufferOverflowed
+                  0x005218                  _SCCP4_CAPTURE_IsBufferEmpty
+                  0x00522c                  _SCCP4_CAPTURE_OverflowFlagReset
+ .text            0x005234         0xa6 build/default/production/mcc_generated_files/sccp5_capture.o
+                  0x005234                  _SCCP5_CAPTURE_Initialize
+                  0x00525a                  _SCCP5_CAPTURE_Start
+                  0x005262                  _SCCP5_CAPTURE_Stop
+                  0x00526a                  _SCCP5_CAPTURE_CallBack
+                  0x005270                  _SCCP5_CAPTURE_Tasks
+                  0x005284                  _SCCP5_CAPTURE_TimerCallBack
+                  0x00528a                  _SCCP5_CAPTURE_TimerTasks
+                  0x00529e                  _SCCP5_CAPTURE_Data16Read
+                  0x0052a6                  _SCCP5_CAPTURE_HasBufferOverflowed
+                  0x0052be                  _SCCP5_CAPTURE_IsBufferEmpty
+                  0x0052d2                  _SCCP5_CAPTURE_OverflowFlagReset
+ .text            0x0052da         0x84 build/default/production/mcc_generated_files/clock.o
+                  0x0052da                  _CLOCK_Initialize
+                  0x005346                  _CLOCK_AuxPllLockStatusGet
+ .text            0x00535e         0x84 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x00535e                  _INTERRUPT_Initialize
+ .text            0x0053e2         0x7e build/default/production/mcc_generated_files/pin_manager.o
+                  0x0053e2                  _PIN_MANAGER_Initialize
+ .text            0x005460         0x44 build/default/production/mcc_generated_files/system.o
+                  0x00547e                  _SYSTEM_Initialize
 
 .text             0x0019e6         0x1a
  .text            0x0019e6         0x18 build/default/production/mcc_generated_files/traps.o

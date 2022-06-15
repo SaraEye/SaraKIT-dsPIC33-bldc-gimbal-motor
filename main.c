@@ -147,7 +147,7 @@ volatile float electricalPositionA = 0, electricalPositionB = 0; //obecna pozycj
 volatile int16_t breakingZoneA = 100, breakingZoneB = 100; //strefa hamowania 0-500 
 volatile int16_t StartA = 0, StartB = 0; //startuje, wi?c pozycja gdy ruch np. 360 stopni nie zako?czony lecz wystartowa? 
 volatile float SpeedA = 0.5, SpeedB = 0.5; //pr?dko?? maksymalna 0.01-10 
-volatile int16_t PolePairsA = 12, PolePairsB = 12; //6 dla 12N14P lub 12 dla 24N22P
+volatile int16_t PolePairsA = 11, PolePairsB = 11; //6 dla 12N14P lub 12 dla 24N22P
 volatile uint8_t lastMotionA=0, lastMotionB=0; //jak dawno ostatni ruch, zero gdy nadal trwa
 volatile float lastSpeedA=0,lastSpeedB=0;
 volatile bool newData = false;
@@ -540,7 +540,6 @@ void parseMotorStop() {
 
 void parseMotorGetInfo() {
     uint8_t info = rxbuf[1];
-   
     if (rxbuf[0] & 0b00000001) { //todo silniki nie tylko 2 ale 8 max
         if (info==0){
             SPI1BUFL = electricalPositionB*10;
@@ -719,11 +718,11 @@ int main(void)
                     parseMotorMoveToAngle(true);
                     break;
                 case 2:
-                    IEC0bits.SPI1RXIE = false;//to do - czy to potrzebne?
-                    IEC0bits.T1IE = false;
+                    //IEC0bits.SPI1RXIE = false;//to do - czy to potrzebne?
+                    //IEC0bits.T1IE = false;
                     parseMotorMoveByAngle();
-                    IEC0bits.SPI1RXIE = true;
-                    IEC0bits.T1IE = true;
+                    //IEC0bits.SPI1RXIE = true;
+                    //IEC0bits.T1IE = true;
                     break;
 
                 case 3:
